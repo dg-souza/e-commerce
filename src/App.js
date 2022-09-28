@@ -1,8 +1,12 @@
+import Login from "./pages/Login";
+
+import './App.css'
+
 const App = () => {
   return (
-    <div className="App">
-      
-    </div>
+    <>
+      <Login />
+    </>
   );
 }
 
