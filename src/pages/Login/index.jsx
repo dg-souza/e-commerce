@@ -6,15 +6,30 @@ import {
 
 import { getMessage } from '../../utils/Toast'
 
+import { useDispatch } from 'react-redux'
+import { authActions } from '../../Reducer/auth'
+import { userActions } from '../../Reducer/user'
+import { useNavigate } from 'react-router-dom'
+
 const Login = () => {
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
     function handleLogin() {
         if(validar()) {
             const objUser = JSON.parse(localStorage.getItem('user'))
-            if(objUser.filter(e => e.login === login && e.password === password)[0] !== undefined) {
+            const user = objUser.filter(e => e.login === login && e.password === password)[0]
+            if(user !== undefined) {
+                dispatch(authActions.logar())
+                dispatch(userActions.addUserInfo({
+                    id: user.id,
+                    login: user.login
+                }))
                 getMessage('sucesso', 'Logado com sucesso')
+                navigate('/first')
             } else {
                 getMessage('erro', 'Usuario não encontrado')
             }
