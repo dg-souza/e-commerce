@@ -37,6 +37,77 @@ export const Container = styled.div`
             justify-content: center;
             align-items: center;
             transition: 0.4s;
+            
+            animation: fade-out 800ms;
+            @keyframes fade-out {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            input {
+                border: 1px solid #8160c6;
+                padding: 15px;
+                color: #8160c6;
+                border-radius: 2px;
+                width: 80%;
+                font-size: 16px;
+                outline: none;
+                margin-top: 20px;
+
+                &::placeholder {
+                    color: #8160c6;
+                }
+            }
+
+            span {
+                margin-top: 10px;
+            }
+
+            a {
+                color: #8160c6;
+                cursor: pointer;
+            }
+
+            button {
+                border: none;
+
+                margin-top: 20px;
+                padding: 15px;
+                width: 90%;
+                color: #fff;
+                background: #8160c6;
+                box-shadow: 0px 1px 6px -1px #000000;
+                transition: 0.4s;
+
+                &:hover {
+                    cursor: pointer;
+                    background: #7953c9;
+                }
+            }
+
+            h1 {
+                color: #7953c9;
+                font-weight: normal;
+            }
+        }
+
+        &-signin {
+            display: none;
+            background: #fff;
+            min-width: 350px;
+            min-height: 200px;
+
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            transition: 0.4s;
+
+            animation: fade-in 800ms;
+            @keyframes fade-in {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
 
             input {
                 border: 1px solid #8160c6;
@@ -84,7 +155,10 @@ export const Container = styled.div`
 
         .container-handle-login {
             min-height: 500px;
-            border-radius: 4px;
+        }
+
+        .container-handle-signin {
+            min-height: 500px;
         }
     }
 `
