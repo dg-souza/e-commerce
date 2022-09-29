@@ -3,4 +3,6 @@ body {
   padding: 0;
 
   font-family: 'ubuntu', sans-serif;
+
+  overflow: hidden;
 }

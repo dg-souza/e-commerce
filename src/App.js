@@ -1,6 +1,8 @@
 import Login from "./pages/Login";
 import InitialPage from "./pages/InitialPage";
 
+import Menu from "./components/Menu";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useSelector } from 'react-redux'
@@ -15,6 +17,7 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
+        {isLoggedin && <Menu />}
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/first' element={<InitialPage />} />

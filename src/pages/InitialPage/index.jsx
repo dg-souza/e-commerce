@@ -5,7 +5,7 @@ const InitialPage = () => {
 
     return(
         <>
-            <h1>{ userInfo.login }</h1>
+            
         </>
     )
 }
